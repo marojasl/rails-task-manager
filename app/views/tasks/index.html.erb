@@ -1,27 +1,26 @@
 <h1>My tasks</h1>
 <% @tasks.each do |task| %>
 
-  <%# if @task.completed == true %>
-    <%# @completed = [X] %>
-  <%# else %>
-    <%# @completed = [ ] %>
-  <%# end %>
-  <ul>
-    <li><%= task.completed %> - <%= task.title %></li>
-  </ul>
+
+    <div class="task-box">
+
+      <% if task.completed == true %>
+        <i class="far fa-check-circle"></i>
+      <% else %>
+        <i class="far fa-circle"></i>
+       <% end %>
+       -
+      <%= link_to task_path(task) do %>
+        <%= task.title %>
+      <% end %>
+      - <%= link_to "Edit task", edit_path(task)%>
+      - <%= link_to "Delete", task_path(task), method: :delete,data: { confirm: "Are you sure?" } %>
+    </div>
+
 <% end %>
 
+<br>
+<br>
+<%= link_to "Create new task", new_path, class:"btn btn-primary"%>
 
-<!--
-if @task.completed == true
-  @completed = [X]
-else
-  @completed = [ ]
-end
- -->
 
-<%# if @task.completed == true %>
-    <%# @completed = [X] %>
-  <%# else %>
-    <%# @completed = [ ] %>
-  <%# end %>
