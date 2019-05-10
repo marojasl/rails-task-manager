@@ -1,0 +1,27 @@
+<h1>My tasks</h1>
+<% @tasks.each do |task| %>
+
+  <%# if @task.completed == true %>
+    <%# @completed = [X] %>
+  <%# else %>
+    <%# @completed = [ ] %>
+  <%# end %>
+  <ul>
+    <li><%= task.completed %> - <%= task.title %></li>
+  </ul>
+<% end %>
+
+
+<!--
+if @task.completed == true
+  @completed = [X]
+else
+  @completed = [ ]
+end
+ -->
+
+<%# if @task.completed == true %>
+    <%# @completed = [X] %>
+  <%# else %>
+    <%# @completed = [ ] %>
+  <%# end %>
